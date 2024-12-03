@@ -76,9 +76,11 @@ static int _dsc_calc_ob_max_addr(struct sde_hw_dsc *hw_dsc, int num_ss)
 	}
 	return 0;
 }
-
 #if defined(CONFIG_DISPLAY_SAMSUNG) && defined(CONFIG_UML)
 static inline int _dsc_subblk_offset(struct sde_hw_dsc *hw_dsc, int s_id, u32 *idx)
+#else
+static inline int _dsc_subblk_offset(struct sde_hw_dsc *hw_dsc, int s_id, u32 *idx)
+#endif
 {
 	const struct sde_dsc_sub_blks *sblk;
 
