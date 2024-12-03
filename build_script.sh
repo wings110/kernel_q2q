@@ -93,6 +93,7 @@ else
 	find "$(pwd)/out/modules" -type f -iname "*.ko" -exec cp -r {} ./AnyKernel3/modules/vendor/lib/modules/ \;
 	cp ./out/arch/arm64/boot/Image ./AnyKernel3/
 	cd AnyKernel3
+        ls ./
 	rm -rf Lavender*
 	zip -r9 $ZIP_NAME . -x '*.git*' '*patch*' '*ramdisk*' 'LICENSE' 'README.md'
 	cd ..
