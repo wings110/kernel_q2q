@@ -66,7 +66,7 @@
 #if defined(CONFIG_DISPLAY_SAMSUNG) && defined(CONFIG_UML)
 static inline int _vdc_subblk_offset(struct sde_hw_vdc *hw_vdc, int s_id, u32 *idx)
 #else
-static inline _vdc_subblk_offset(struct sde_hw_vdc *hw_vdc, int s_id, u32 *idx)
+static inline int _vdc_subblk_offset(struct sde_hw_vdc *hw_vdc, int s_id, u32 *idx)
 #endif
 		
 {
