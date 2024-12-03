@@ -65,11 +65,12 @@
 #define VDC_CTL_BLOCK_SIZE         0x300
 
 #if defined(CONFIG_DISPLAY_SAMSUNG) && defined(CONFIG_UML)
-static inline int _vdc_subblk_offset(struct sde_hw_vdc *hw_vdc, int s_id,
+    // Code that will be compiled if both CONFIG_DISPLAY_SAMSUNG and CONFIG_UML are defined
+    static inline int _dsc_subblk_offset(struct sde_hw_dsc *hw_dsc, int s_id, u32 *idx)
 #else
-static inline _vdc_subblk_offset(struct sde_hw_vdc *hw_vdc, int s_id,
+    // Code that will be compiled if the condition above is not met
+    static inline int _dsc_subblk_offset(struct sde_hw_dsc *hw_dsc, int s_id, u32 *idx)
 #endif
-		u32 *idx)
 {
 	int rc = 0;
 	const struct sde_vdc_sub_blks *sblk;
